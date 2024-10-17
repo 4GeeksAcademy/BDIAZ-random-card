@@ -30,3 +30,8 @@ h1 {
 .numero {
   height: 320px;
 }
+
+.fa-diamond,
+.fa-heart {
+  color: red;
+}

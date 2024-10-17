@@ -11,20 +11,45 @@ window.onload = function() {
   createRandomCard();
 };
 
+/*
+class="fa-solid fa-heart icon" -rojo
+class="fa-solid fa-diamond"
+<i class="fa-solid fa-clover"></i>
+<i class="fa-solid fa-spa"></i>*/
+
 function createRandomCard() {
   let randomNumber = generateCardNumber();
   let randomSimbol = generateRandomSimbol();
-  console.log(`randomNumber: ${randomNumber}`);
-  console.log(`randomSimbol: ${randomSimbol}`);
+  let icons = document.querySelectorAll(".icon");
+  let cardNumber = document.getElementById("number");
+  console.log(icons);
+  icons.forEach(icon => {
+    icon.className = `fa-solid fa-${randomSimbol} icon`;
+  });
+  cardNumber.innerHTML = randomNumber;
 }
 
 function generateCardNumber() {
-  let arrayNumbers = ["2", "3", "4", "5", "6", "7", "8", "9", "10"];
+  let arrayNumbers = [
+    "A",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    "Q",
+    "K"
+  ];
   return arrayNumbers[generateRandomNumber(arrayNumbers.length)];
 }
 
 function generateRandomSimbol() {
-  let arraySimbols = ["A", "J", "Q", "K"];
+  let arraySimbols = ["diamond", "clover", "heart", "spa"];
   return arraySimbols[generateRandomNumber(arraySimbols.length)];
 }
 
