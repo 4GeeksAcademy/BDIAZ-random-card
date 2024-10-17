@@ -9,6 +9,11 @@ window.onload = function() {
   //write your code here
   console.log("Hello Rigo from the console!");
   createRandomCard();
+  let changeBoton = document.getElementById("changeBoton");
+  changeBoton.addEventListener("click", function() {
+    createRandomCard();
+  });
+  setInterval(createRandomCard, 10000);
 };
 
 /*
@@ -22,7 +27,6 @@ function createRandomCard() {
   let randomSimbol = generateRandomSimbol();
   let icons = document.querySelectorAll(".icon");
   let cardNumber = document.getElementById("number");
-  console.log(icons);
   icons.forEach(icon => {
     icon.className = `fa-solid fa-${randomSimbol} icon`;
   });
