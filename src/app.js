@@ -2,25 +2,15 @@
 import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
 window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
   createRandomCard();
   let changeBoton = document.getElementById("changeBoton");
   changeBoton.addEventListener("click", function() {
     createRandomCard();
   });
+
   setInterval(createRandomCard, 10000);
 };
-
-/*
-class="fa-solid fa-heart icon" -rojo
-class="fa-solid fa-diamond"
-<i class="fa-solid fa-clover"></i>
-<i class="fa-solid fa-spa"></i>*/
 
 function createRandomCard() {
   let randomNumber = generateCardNumber();
